@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Circles</title>
+		<!-- Load the Paper.js library -->
+		<script type="text/javascript" src="paper-full.js"></script>
+		<link href="circles.css" rel="stylesheet" type="text/css" />
+		<!-- Define inlined PaperScript associate it with myCanvas -->
+		<script type="text/paperscript" canvas="myCanvas">
+		function onKeyDown(event){
+			var maxPoint = new Point(view.size.width, view.size.height);
+
+			var randomPoint = Point.random();
+			var point = maxPoint * randomPoint;
+			
+			randomNum = Math.random() * 50 + 10;
+
+			new Path.Circle(point, randomNum).fillColor = randomColor();
+		}
+
+		function randomColor(){
+			return 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+
+		}
+		</script>
+	</head>
+	<body>
+		<canvas id="myCanvas" resize></canvas>
+	</body>
+</html>
+
