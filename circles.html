@@ -8,15 +8,20 @@
 		<link href="circles.css" rel="stylesheet" type="text/css" />
 		<!-- Define inlined PaperScript associate it with myCanvas -->
 		<script type="text/paperscript" canvas="myCanvas">
-		function onKeyDown(event){
-			var maxPoint = new Point(view.size.width, view.size.height);
 
-			var randomPoint = Point.random();
-			var point = maxPoint * randomPoint;
-			
-			randomNum = Math.random() * 50 + 10;
+		function onKeyDown(event)
+		{
+			for(var i = 0; i < Math.random() * 100; i++)
+			{
+				var maxPoint = new Point(view.size.width, view.size.height);
+				var randomPoint = Point.random();
+				var point = maxPoint * randomPoint;
 
-			new Path.Circle(point, randomNum).fillColor = randomColor();
+				randomNum = Math.random() * 50 + 10;
+
+				new Path.Circle(point, randomNum).fillColor = randomColor(); 
+			}
+
 		}
 
 		function randomColor(){
